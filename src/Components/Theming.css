@@ -1,5 +1,5 @@
 :root {
-    --primary: #007A79;
+    --primary: #3F0046;
     --secondary: #E5E5E5;
     --paragraph:#616B7E;
     --success: #28a745;
@@ -10,17 +10,16 @@
     --dark:#343a40;
     --dull:#000;
     --facebook:#385898;
-    --main:'NafeesWeb', sans-serif; 
+    --main: sans-serif; 
   }
   
   @font-face {
-    font-family: 'NafeesWeb';
-    src: url('/src/Fonts/NafeesWeb.ttf') format('truetype');
+    font-family: 'Sans-serif';
     font-weight: normal;
     font-style: normal;
   }
   
   body {
-    font-family: 'Nafees Web', sans-serif;
+    font-family: sans-serif;
   }
   
