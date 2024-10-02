@@ -11,15 +11,15 @@ export default function Head() {
     backgroundColor='var(--light)'
     >
         <BoxComponent
-        width='130px'
-        height='6vh'
+        width='140px'
+        height='5vh'
         >
         <img
         style={{
             width:'100%',
             height:'100%'
         }}
-        src="Images/main.png" alt="" /></BoxComponent>
+        src="Images/logo.png" alt="" /></BoxComponent>
         <BoxComponent
         border="1px solid var(--primary)"
         borderRadius='7px'

@@ -33,7 +33,10 @@ export default function Login() {
         height="55vh"
         width="40%"
         >
-            <img src="Images/logo.png" alt="" />
+            <img 
+            width={'75%'}
+            height={'100vh'}
+            src="Images/logo.png" alt="" />
             <TypographyComponent
             color="var(--dull)"
             fontFamily='var(--main)'
@@ -44,9 +47,11 @@ export default function Login() {
             </TypographyComponent>
             <InputComponent
             label="E-mail"
+
             />
             <InputComponent
             label="Password"
+            type='password'
             />
             <ButtonComponent
             variant='contained'
