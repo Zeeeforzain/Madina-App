@@ -1,7 +1,7 @@
 import React from 'react';
 import BoxComponent from './Box';
 import TypographyComponent from './Typography';
-import ProgressBar from './ProgressBar'; // Import the ProgressBar component
+import Progress from './Progress';
 
 export default function Top(props) {
   return (
@@ -12,13 +12,13 @@ export default function Top(props) {
         fontFamily='var(--main)'
         marginBottom='10px'
       >
-        {props.country}
+        Top Campaigns
       </TypographyComponent>
       <BoxComponent
         width="200px"
         height='130px'
-        padding='5px'
-        border='1px solid green'
+        padding='10px'
+        overflow='hidden'
         borderRadius='10px'
         backgroundColor='var(--light)'
         display='flex'
@@ -27,12 +27,12 @@ export default function Top(props) {
         alignItems='center'
         boxShadow='0px 1px 1px 1px var(--paragraph)'
       >
-        <TypographyComponent
-        fontSize='12px'
-        fontFamily='var(--main)'
-        color='var(--dark)'
-        >Pakistan</TypographyComponent>
-        <ProgressBar progress={10} /> 
+        <Progress title='Gaza charity funds' progress={20}/>
+        <Progress title='Palestine Donations' progress={80}/>
+        <Progress title='Pakistan Funds' progress={70}/>
+        <Progress title='USAID' progress={80}/>
+        <Progress title='Government Relief' progress={40}/>
+        <Progress title='Mosque Project' progress={100}/>
       </BoxComponent>
     </BoxComponent>
   );

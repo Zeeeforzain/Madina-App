@@ -1,17 +1,20 @@
+
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import routing components
 import BoxComponent from './Components/Box';
-import Figures from './Components/Figures';
-import Head from './Components/Head';
-import MenuOption from './Components/MenuOption';
-import Sidebar from './Components/Sidebar';
-import Top from './Components/Top';
+import Home from './Home';
 import Login from './Login';
 
 function App() {
   return (
-    <BoxComponent>
-    <Login/>
-    </BoxComponent>
+    <Router>
+      <BoxComponent>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Home />} /> 
+        </Routes>
+      </BoxComponent>
+    </Router>
   );
 }
 

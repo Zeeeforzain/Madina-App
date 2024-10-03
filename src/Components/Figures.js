@@ -38,6 +38,7 @@ export default function Figures(props) {
       fontFamily='var(--main)'
       color='var(--dark)'
       textAlign='right'
+      marginLeft='10px'
       >{props.amount}</TypographyComponent>
       </BoxComponent>
     </BoxComponent>

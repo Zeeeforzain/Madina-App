@@ -12,7 +12,7 @@ export default function MenuOption({ icon: Icon, label }) {
       height="5vh"
       padding="5px 10px"
       sx={{"&:hover":{cursor:"pointer",
-        backgroundColor:'var(--light)'
+        backgroundColor:'white'
       }}}
     >
       <Icon />

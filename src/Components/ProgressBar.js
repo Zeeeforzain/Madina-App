@@ -9,11 +9,10 @@ export default function ProgressBar({ progress }) {
       borderRadius: '20px',
       border:'1px solid var(--primary)',
       overflow: 'hidden',
-      marginTop: '5px',
     }}>
       <BoxComponent style={{
         width: `${progress}%`,
-        height: '7px',
+        height: '8px',
         backgroundColor: 'var(--primary)',
       }} />
     </BoxComponent>
