@@ -9,7 +9,7 @@ export default function Head() {
 
   const handleLogout = () => {
     // Add any logout logic if needed (e.g., clearing user session)
-    navigate('/login');
+    navigate('/');
   };
 
   return (
