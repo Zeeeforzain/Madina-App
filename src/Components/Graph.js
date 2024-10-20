@@ -13,8 +13,8 @@ export default function BasicArea() {
           ],
           label: 'Months',
           tick: {
-            rotate: -45, // Rotate the labels for better visibility
-            align: 'end', // Align labels to the end
+            rotate: -45, 
+            align: 'end',
           },
         },
       ]}
