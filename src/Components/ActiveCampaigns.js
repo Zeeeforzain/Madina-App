@@ -29,7 +29,7 @@ export default function ActiveCampaigns(props) {
         fontWeight='600'
         color='var(--dull)'
       >
-        Title
+        {props.title}
       </TypographyComponent>
       <TypographyComponent
         fontSize='12px'
@@ -37,7 +37,7 @@ export default function ActiveCampaigns(props) {
         color='var(--paragraph)'
         marginBottom='15px'
       >
-        Description
+        {props.description}
       </TypographyComponent>
       <ProgressBar progress={40} />
       <BoxComponent

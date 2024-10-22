@@ -12,12 +12,12 @@ export default function ActiveBox() {
            color='var(--dull)'
            margin='10px 20px'
         >Active Campaigns</TypographyComponent>
-      <ActiveCampaigns raised="121321" goal="32544"/>
-      <ActiveCampaigns raised="121321" goal="32544"/>
-      <ActiveCampaigns raised="121321" goal="32544"  />
-      <ActiveCampaigns raised="121321" goal="32544"/>
-      <ActiveCampaigns raised="121321" goal="32544" />
-      <ActiveCampaigns raised="121321" goal="32544" />
+      <ActiveCampaigns title="Title Here" description="Description Here" raised="121321" goal="32544"/>
+      <ActiveCampaigns title="Title Here" description="Description Here" raised="121321" goal="32544"/>
+      <ActiveCampaigns title="Title Here" description="Description Here" raised="121321" goal="32544"  />
+      <ActiveCampaigns title="Title Here" description="Description Here" raised="121321" goal="32544"/>
+      <ActiveCampaigns title="Title Here" description="Description Here" raised="121321" goal="32544" />
+      <ActiveCampaigns title="Title Here" description="Description Here" raised="121321" goal="32544" />
       <ButtonComponent
       varient='contained'
       backgroundColor='var(--primary)'
