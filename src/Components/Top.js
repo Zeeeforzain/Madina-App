@@ -12,7 +12,7 @@ export default function Top(props) {
         fontFamily='var(--main)'
         marginBottom='10px'
       >
-        Top Campaigns
+        {props.heading}
       </TypographyComponent>
       <BoxComponent
         width="200px"

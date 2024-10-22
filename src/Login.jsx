@@ -64,7 +64,7 @@ export default function Login() {
         />
         <ButtonComponent
           variant='contained'
-          color="var(--primary)"
+          backgroundColor="var(--primary)"
           sx={{
             width: '50%',
             borderRadius: '50px',

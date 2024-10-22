@@ -37,8 +37,7 @@ export default function DropdownList() {
     display='flex'
     justifyContent='space-between'
     alignItems='center'
-    border='1px solid green'
-    margin='50px'
+    width='80%'
     >
       <Dropdown label="Year" menuItems={year} />
       <Dropdown label="Month" menuItems={month} />
