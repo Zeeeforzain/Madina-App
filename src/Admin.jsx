@@ -5,8 +5,15 @@ import Head from './Components/Head';
 import TypographyComponent from './Components/Typography';
 import ButtonComponent from './Components/Button';
 import Searchbox from './Components/Searchbox';
+import Dropdown from './Components/Dropdown';
+import Table from './Components/Table';
 
 export default function Admin() {
+  const status = [
+    { value: 1, label: 'All' },
+    { value: 2, label: 'Active' },
+    { value: 3, label: 'Inactive' },
+  ];
   return (
     <BoxComponent>
       <Head/>
@@ -18,13 +25,11 @@ export default function Admin() {
       <BoxComponent
       width='82%'
       padding='20px'
-      border='2px solid blue'
       >
         <BoxComponent
         display='flex'
         justifyContent='space-between'
         width='100%'
-        border='2px solid green'
         >
           <TypographyComponent
           fontSize='30px'
@@ -43,7 +48,16 @@ export default function Admin() {
           }}
           >+ Add Sub-Admin</ButtonComponent>
         </BoxComponent>
+        <BoxComponent
+        display='flex'
+        justifyContent='space-between'
+        width='50%'
+        margin='30px 0px'
+        >
         <Searchbox/>
+        <BoxComponent marginLeft='10px'><Dropdown label="Status" menuItems={status}/></BoxComponent>
+        </BoxComponent>
+        <Table/>
       </BoxComponent>
       </BoxComponent>
     </BoxComponent>
