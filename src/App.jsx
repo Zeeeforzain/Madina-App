@@ -4,16 +4,18 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Im
 import BoxComponent from './Components/Box';
 import Home from './Home';
 import Login from './Login';
+import Admin from './Admin';
+import News from './News';
 
 function App() {
   return (
     <Router>
-      <BoxComponent>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} /> 
+          <Route path="/dashboard" element={<Home />} /> 
+          <Route path="/admin" element={<Admin/>} /> 
+          <Route path="/news" element={<News/>} /> 
         </Routes>
-      </BoxComponent>
     </Router>
   );
 }

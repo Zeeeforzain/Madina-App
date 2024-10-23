@@ -9,7 +9,7 @@ export default function Login() {
   const navigate = useNavigate(); 
   const handleLogin = () => {
     // Here you can add your login logic if needed
-    navigate('home'); 
+    navigate('dashboard'); 
   };
 
   return (

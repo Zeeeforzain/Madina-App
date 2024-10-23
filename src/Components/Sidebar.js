@@ -14,6 +14,15 @@ export default function Sidebar() {
   const handleLogout = () => {
     navigate('/');
   };
+  const handleAdmin=()=>{
+    navigate('/admin');
+  };
+  const handleNews=()=>{
+    navigate('/news');
+  };
+  const handleHome=()=>{
+    navigate('/dashboard');
+  };
 
   return (
     <BoxComponent
@@ -25,9 +34,9 @@ export default function Sidebar() {
     backgroundColor='var(--light)'
     >
     <BoxComponent>
-    <MenuOption icon={DashboardOutlinedIcon} label="Dashboard" />
-    <MenuOption icon={ArticleIcon} label="News" />
-    <MenuOption icon={GroupOutlinedIcon} label="Admins" />
+    <MenuOption onClick={handleHome} icon={DashboardOutlinedIcon} label="Dashboard" />
+    <MenuOption onClick={handleNews} icon={ArticleIcon} label="News" />
+    <MenuOption onClick={handleAdmin}  icon={GroupOutlinedIcon} label="Admins" />
     </BoxComponent>
     <BoxComponent
     display='flex'
