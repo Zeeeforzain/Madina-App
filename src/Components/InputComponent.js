@@ -15,7 +15,7 @@ export default function InputComponent(props) {
   return (
     <Box
       component="form"
-      sx={{ '& > :not(style)': { m: 1, width: '50ch' } }}
+      sx={{ '& > :not(style)': { m: 2, width: '55ch' } }}
       noValidate
       autoComplete="off"
     >
@@ -41,6 +41,20 @@ export default function InputComponent(props) {
               }
             : undefined
         }
+        sx={{
+          '& .MuiInput-underline:before': {
+            borderBottomColor: 'var(--primary)', // Underline color when unfocused
+          },
+          '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+            borderBottomColor: 'var(--primary)', // Underline color on hover
+          },
+          '& .MuiInput-underline:after': {
+            borderBottomColor: 'var(--primary)', // Underline color when focused
+          },
+          '& .MuiInputLabel-root.Mui-focused': {
+            color: 'var(--primary)', // Label color when focused
+          },
+        }}
       />
     </Box>
   );

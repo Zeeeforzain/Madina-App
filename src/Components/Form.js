@@ -1,0 +1,70 @@
+import React from "react";
+import BoxComponent from "./Box";
+import TypographyComponent from "./Typography";
+import InputComponent from "./InputComponent";
+import AdminSelection from "./AdminSelection";
+import ButtonComponent from "./Button";
+
+export default function Form({ onCancel }) { // Accept onCancel as a prop
+  return (
+    <BoxComponent
+      boxShadow="1px 1px 1px 1px var(--paragraph)"
+      maxHeight="90vh"
+      overflow="auto" 
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-around"
+      alignItems="center" 
+    >
+      <TypographyComponent
+        marginTop="20px"
+        fontSize="25px"
+        fontWeight="600"
+        fontFamily="var(--main)"
+        color="var(--dull)"
+      >
+        Add Sub-Admin
+      </TypographyComponent>
+      <InputComponent label="Sub-Admin Name" />
+      <InputComponent label="Sub-Admin Email" />
+      <InputComponent label="Sub-Admin Phone Number" />
+      <InputComponent label="Password" type="password" />
+      <InputComponent label="Confirm Password" type="password" />
+      <BoxComponent padding="5px 20px">
+        <AdminSelection />
+      </BoxComponent>
+      <BoxComponent
+        display="flex"
+        justifyContent="space-between"
+        width="90%"
+        marginBottom="20px"
+      >
+        <ButtonComponent
+          sx={{
+            color: 'var(--primary)',
+            padding: '10px 70px',
+            fontSize: '12px',
+            textTransform: 'none',
+            fontWeight: '600',
+            borderRadius: '20px'
+          }}
+          onClick={onCancel} // Call the onCancel function when clicked
+        >
+          Cancel
+        </ButtonComponent>
+        <ButtonComponent
+          variant="contained"
+          backgroundColor="var(--primary)"
+          sx={{
+            padding: '10px 70px',
+            fontSize: '12px',
+            fontWeight: '600',
+            borderRadius: '20px'
+          }}
+        >
+          Add Sub-Admin
+        </ButtonComponent>
+      </BoxComponent>
+    </BoxComponent>
+  );
+}
