@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import BoxComponent from './Box';
 
 export default function InputComponent(props) {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -13,7 +13,7 @@ export default function InputComponent(props) {
   };
 
   return (
-    <Box
+    <BoxComponent
       component="form"
       sx={{ '& > :not(style)': { m: 2, width: '55ch' } }}
       noValidate
@@ -56,6 +56,6 @@ export default function InputComponent(props) {
           },
         }}
       />
-    </Box>
+    </BoxComponent>
   );
 }

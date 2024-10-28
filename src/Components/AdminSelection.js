@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Radio from '@mui/material/Radio';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import RadioGroup from '@mui/material/RadioGroup';
-import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
+import TypographyComponent from './Typography';
+import BoxComponent from './Box';
 
 export default function AdminSelection() {
   const [selectedRole, setSelectedRole] = React.useState('superAdmin');
@@ -69,14 +69,14 @@ export default function AdminSelection() {
                 />
               }
               label={
-                <Box>
-                  <Typography variant="subtitle1" fontWeight="bold">
+                <BoxComponent>
+                  <TypographyComponent variant="subtitle1" fontWeight="bold">
                     {role.title}
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary">
+                  </TypographyComponent>
+                  <TypographyComponent variant="body2" color="textSecondary">
                     {role.description}
-                  </Typography>
-                </Box>
+                  </TypographyComponent>
+                </BoxComponent>
               }
             />
           </Paper>
