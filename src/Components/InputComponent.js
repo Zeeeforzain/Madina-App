@@ -15,7 +15,7 @@ export default function InputComponent(props) {
   return (
     <BoxComponent
       component="form"
-      sx={{ '& > :not(style)': { m: 2, width: '55ch' } }}
+      sx={{ '& > :not(style)': { m: 1, width: '55ch' } }}
       noValidate
       autoComplete="off"
     >
@@ -23,7 +23,7 @@ export default function InputComponent(props) {
         required
         id="filled-basic"
         label={props.label}
-        variant="standard"
+        variant={props.varient}
         type={props.type === 'password' && showPassword ? 'text' : props.type}
         InputProps={
           props.type === 'password'

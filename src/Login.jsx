@@ -56,9 +56,11 @@ export default function Login() {
           Login to your account
         </TypographyComponent>
         <InputComponent
+        varient='standard'
           label="E-mail"
         />
         <InputComponent
+        varient='standard'
           label="Password"
           type='password'
         />
