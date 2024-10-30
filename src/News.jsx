@@ -5,6 +5,7 @@ import Head from './Components/Head';
 import TypographyComponent from './Components/Typography';
 import ButtonComponent from './Components/Button';
 import { useNavigate } from 'react-router-dom'; 
+import Table from './Components/Table';
 
 export default function News() {
   const navigate = useNavigate(); 
@@ -17,7 +18,7 @@ export default function News() {
     <Head />
     <BoxComponent display="flex" justifyContent="space-between">
       <Sidebar />
-      <BoxComponent width="82%" padding="20px">
+      <BoxComponent display='flex' flexDirection='column' width="82%" padding="20px" gap='50px'>
         <BoxComponent
           display="flex"
           justifyContent="space-between"
@@ -40,6 +41,7 @@ export default function News() {
             + Add News
           </ButtonComponent>
         </BoxComponent>
+        <Table/>
         </BoxComponent>
       </BoxComponent>
     </BoxComponent>
