@@ -25,11 +25,13 @@ export default function Form({ onCancel }) { // Accept onCancel as a prop
       >
         Add Sub-Admin
       </TypographyComponent>
+      <BoxComponent width='92%' gap='10px' display="flex" flexDirection="column">
       <InputComponent label="Sub-Admin Name" />
       <InputComponent label="Sub-Admin Email" />
       <InputComponent label="Sub-Admin Phone Number" />
       <InputComponent label="Password" type="password" />
       <InputComponent label="Confirm Password" type="password" />
+      </BoxComponent>
       <BoxComponent padding="5px 20px">
         <AdminSelection />
       </BoxComponent>

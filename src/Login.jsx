@@ -55,15 +55,17 @@ export default function Login() {
         >
           Login to your account
         </TypographyComponent>
+        <BoxComponent width='80%'>
         <InputComponent
         varient='standard'
           label="E-mail"
-        />
+        /></BoxComponent>
+        <BoxComponent width='80%'>
         <InputComponent
         varient='standard'
           label="Password"
           type='password'
-        />
+        /></BoxComponent>
         <ButtonComponent
           variant='contained'
           backgroundColor="var(--primary)"

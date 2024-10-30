@@ -1,22 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react';
-import BoxComponent from './Components/Box';
-import Sidebar from './Components/Sidebar';
-import Head from './Components/Head';
-import TypographyComponent from './Components/Typography';
-import ButtonComponent from './Components/Button';
-import Searchbox from './Components/Searchbox';
-import Dropdown from './Components/Dropdown';
-import Table from './Components/Table';
-import Form from './Components/Form'; // Assuming Form is your form component
+import React, { useState, useRef, useEffect } from "react";
+import BoxComponent from "./Components/Box";
+import Sidebar from "./Components/Sidebar";
+import Head from "./Components/Head";
+import TypographyComponent from "./Components/Typography";
+import ButtonComponent from "./Components/Button";
+import Searchbox from "./Components/Searchbox";
+import Dropdown from "./Components/Dropdown";
+import Table from "./Components/Table";
+import Form from "./Components/Form"; // Assuming Form is your form component
 
 export default function Admin() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef(null);
 
   const status = [
-    { value: 1, label: 'All' },
-    { value: 2, label: 'Active' },
-    { value: 3, label: 'Inactive' },
+    { value: 1, label: "All" },
+    { value: 2, label: "Active" },
+    { value: 3, label: "Inactive" },
   ];
 
   // Handle opening the modal
@@ -39,14 +39,14 @@ export default function Admin() {
   // Add event listener for clicks outside the modal
   useEffect(() => {
     if (isModalOpen) {
-      document.addEventListener('mousedown', handleCloseModal);
+      document.addEventListener("mousedown", handleCloseModal);
     } else {
-      document.removeEventListener('mousedown', handleCloseModal);
+      document.removeEventListener("mousedown", handleCloseModal);
     }
 
     // Cleanup event listener
     return () => {
-      document.removeEventListener('mousedown', handleCloseModal);
+      document.removeEventListener("mousedown", handleCloseModal);
     };
   }, [isModalOpen]);
 
@@ -56,7 +56,11 @@ export default function Admin() {
       <BoxComponent display="flex" justifyContent="space-between">
         <Sidebar />
         <BoxComponent width="82%" padding="20px">
-          <BoxComponent display="flex" justifyContent="space-between" width="100%">
+          <BoxComponent
+            display="flex"
+            justifyContent="space-between"
+            width="100%"
+          >
             <TypographyComponent
               fontSize="30px"
               fontFamily="var(--main)"
@@ -68,13 +72,18 @@ export default function Admin() {
             <ButtonComponent
               variant="contained"
               backgroundColor="var(--primary)"
-              sx={{ color: 'var(--light)', padding: '10px' }}
+              sx={{ color: "var(--light)", padding: "10px" }}
               onClick={handleOpenModal}
             >
               + Add Sub-Admin
             </ButtonComponent>
           </BoxComponent>
-          <BoxComponent display="flex" justifyContent="space-between" width="50%" margin="30px 0px">
+          <BoxComponent
+            display="flex"
+            justifyContent="space-between"
+            width="50%"
+            margin="30px 0px"
+          >
             <Searchbox />
             <BoxComponent marginLeft="10px">
               <Dropdown label="Status" menuItems={status} />
@@ -96,7 +105,9 @@ export default function Admin() {
             height="100%"
             bgcolor="rgba(0, 0, 0, 0.5)" /* Dimmed background */
             zIndex="1200"
-            onClick={handleCancelClick} /* Close the modal when the overlay is clicked */
+            onClick={
+              handleCancelClick
+            } /* Close the modal when the overlay is clicked */
           />
 
           {/* Modal for the form */}
@@ -112,7 +123,8 @@ export default function Admin() {
             ref={modalRef}
             padding="0px"
           >
-            <Form onCancel={handleCancelClick} /> {/* Pass the handleCancelClick to Form */}
+            <Form onCancel={handleCancelClick} />{" "}
+            {/* Pass the handleCancelClick to Form */}
           </BoxComponent>
         </>
       )}
