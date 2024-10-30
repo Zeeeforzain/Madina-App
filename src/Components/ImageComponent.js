@@ -22,7 +22,7 @@ const ImageComponent = () => {
   };
 
   return (
-    <BoxComponent width='90%' display="flex" flexDirection="column" alignItems="left" gap={2} margin='10px'>
+    <BoxComponent width='90%' display="flex" flexDirection="column" alignItems="left" gap={1}>
       
 
       {/* Upload Button */}

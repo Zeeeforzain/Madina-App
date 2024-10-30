@@ -23,7 +23,7 @@ const TagsComponent = ({ label, placeholder }) => {
   };
 
   return (
-    <BoxComponent display="flex" flexDirection="column" gap={1}>
+    <BoxComponent display="flex" flexDirection="column" gap={0.5}>
       {/* Tag Input Field */}
       <TextField
         label={label}

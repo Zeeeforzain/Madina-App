@@ -36,9 +36,11 @@ export default function NewsForm() {
     >
       <BoxComponent
         margin="50px"
-        padding="40px 15px"
+        padding="30px 15px"
         borderRadius='10px'
         width="40%"
+        gap='10px'
+        // height="135vh"
         display="flex"
         flexDirection="column"
         justifyContent="space-around"
@@ -55,13 +57,15 @@ export default function NewsForm() {
         >
           Add News
         </TypographyComponent>
-        <InputComponent variant="outlined" label="Heading" />
+        <BoxComponent width='90%'>
+        <InputComponent variant="outlined" label="Heading" /></BoxComponent>
         <BoxComponent width="90%">
           <TextArea label="Description" placeholder={"Add description here"} />
         </BoxComponent>
-        <InputComponent label="Country" />
-        <InputComponent label="City" />
-        <BoxComponent width="90%" margin="5px">
+        <BoxComponent width='90%'>
+        <InputComponent label="Country" /></BoxComponent>
+        <BoxComponent width='90%'><InputComponent label="City" /></BoxComponent>
+        <BoxComponent width="90%" >
           <TagsComponent label={"Tags"} />
         </BoxComponent>
         <BoxComponent width="90%">

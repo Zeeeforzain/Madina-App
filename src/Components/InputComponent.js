@@ -15,7 +15,7 @@ export default function InputComponent(props) {
   return (
     <BoxComponent
       component="form"
-      sx={{ '& > :not(style)': { m: 1, width: '55ch' } }}
+      sx={{ '& > :not(style)': { width: '100%' } }}
       noValidate
       autoComplete="off"
     >
