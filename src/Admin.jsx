@@ -128,6 +128,7 @@ export default function Admin() {
           />
           <BoxComponent
             position="fixed"
+            width="40%"
             top="5%"
             left="30%"
             transform="translate(-50%, -50%)"
@@ -135,7 +136,7 @@ export default function Admin() {
             borderRadius="8px"
             padding="20px"
             ref={modalRef}
-            zIndex="1300"
+            zIndex="1200"
           >
             <Form />
           </BoxComponent>
