@@ -18,7 +18,6 @@ function App() {
           <Route path="/newsform" element={<NewsForm/>} /> 
         </Routes>
     </Router>
-    
   );
 }
 

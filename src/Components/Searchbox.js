@@ -3,11 +3,11 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function Searchbox() {
+export default function Searchbox(props) {
   return (
     <TextField
       variant="outlined"
-      placeholder="Search a user by name, e-mail or phone number"
+      placeholder={props.placeholder}
       fullWidth
       InputProps={{
         startAdornment: (

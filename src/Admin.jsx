@@ -1,42 +1,61 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react"; 
 import BoxComponent from "./Components/Box";
 import Sidebar from "./Components/Sidebar";
 import Head from "./Components/Head";
 import TypographyComponent from "./Components/Typography";
 import ButtonComponent from "./Components/Button";
-import Searchbox from "./Components/Searchbox";
-import Dropdown from "./Components/Dropdown";
 import Table from "./Components/Table";
-import Form from "./Components/Form"; // Assuming Form is your form component
+import Form from "./Components/Form";
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
+import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
+import Find from "./Components/Find";
 
 export default function Admin() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const modalRef = useRef(null);
+  const [rows, setRows] = useState([
+    { id: 1, Name: 'Snow', Role: 'Admin', Email: 'Jon@gmail.com', Phone: '0300000000', Last_Login: 'Monday', Status: 'Active' },
+    { id: 2, Name: 'Lannister', Role: 'User', Email: 'Cersei@gmail.com', Phone: '0300000001', Last_Login: 'Tuesday', Status: 'Inactive' },
+    { id: 3, Name: 'Stark', Role: 'User', Email: 'Arya@gmail.com', Phone: '0300000002', Last_Login: 'Wednesday', Status: 'Active' },
+    { id: 4, Name: 'Targaryen', Role: 'Admin', Email: 'Daenerys@gmail.com', Phone: '0300000003', Last_Login: 'Thursday', Status: 'Inactive' },
+    { id: 5, Name: 'Melisandre', Role: 'User', Email: 'Mel@gmail.com', Phone: '0300000004', Last_Login: 'Friday', Status: 'Active' },
+    { id: 6, Name: 'Clifford', Role: 'User', Email: 'Cliff@gmail.com', Phone: '0300000005', Last_Login: 'Saturday', Status: 'Inactive' },
+    { id: 7, Name: 'Clifford', Role: 'User', Email: 'Cliff@gmail.com', Phone: '0300000005', Last_Login: 'Saturday', Status: 'Inactive' },
+    { id: 8, Name: 'Clifford', Role: 'User', Email: 'Cliff@gmail.com', Phone: '0300000005', Last_Login: 'Saturday', Status: 'Inactive' },
+    { id: 9, Name: 'Clifford', Role: 'User', Email: 'Cliff@gmail.com', Phone: '0300000005', Last_Login: 'Saturday', Status: 'Inactive' },
+    { id: 10, Name: 'Clifford', Role: 'User', Email: 'Cliff@gmail.com', Phone: '0300000005', Last_Login: 'Saturday', Status: 'Inactive' },
+  ]);
 
+  const modalRef = useRef(null);
   const status = [
     { value: 1, label: "All" },
     { value: 2, label: "Active" },
     { value: 3, label: "Inactive" },
   ];
 
-  // Handle opening the modal
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
 
-  // Handle closing the modal
   const handleCloseModal = (event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
       setIsModalOpen(false);
     }
   };
 
-  // Function to close the modal when clicking the "Cancel" button
   const handleCancelClick = () => {
     setIsModalOpen(false);
   };
 
-  // Add event listener for clicks outside the modal
+  const handleStatusChange = (id) => {
+    setRows((prevRows) =>
+      prevRows.map((row) =>
+        row.id === id
+          ? { ...row, Status: row.Status === 'Active' ? 'Inactive' : 'Active' }
+          : row
+      )
+    );
+  };
+
   useEffect(() => {
     if (isModalOpen) {
       document.addEventListener("mousedown", handleCloseModal);
@@ -44,11 +63,32 @@ export default function Admin() {
       document.removeEventListener("mousedown", handleCloseModal);
     }
 
-    // Cleanup event listener
     return () => {
       document.removeEventListener("mousedown", handleCloseModal);
     };
   }, [isModalOpen]);
+
+  const headings = [
+    { field: 'Name', headerName: 'Name' },
+    { field: 'Role', headerName: 'Role' },
+    { field: 'Email', headerName: 'Email' },
+    { field: 'Phone', headerName: 'Phone No', type: 'number' },
+    { field: 'Last_Login', headerName: 'Last Login' },
+    {
+      field: 'Status',
+      headerName: 'Status',
+      renderCell: (params) => (
+        <span style={{ color: params.value === 'Active' ? 'green' : 'red' }}>
+          {params.value}
+        </span>
+      ),
+    },
+  ];
+
+  const icons = {
+    edit: <ModeEditOutlineOutlinedIcon />,
+    key: <VpnKeyOutlinedIcon />,
+  };
 
   return (
     <BoxComponent>
@@ -56,17 +96,8 @@ export default function Admin() {
       <BoxComponent display="flex" justifyContent="space-between">
         <Sidebar />
         <BoxComponent width="82%" padding="20px">
-          <BoxComponent
-            display="flex"
-            justifyContent="space-between"
-            width="100%"
-          >
-            <TypographyComponent
-              fontSize="30px"
-              fontFamily="var(--main)"
-              color="var(--dull)"
-              fontWeight="400"
-            >
+          <BoxComponent display="flex" justifyContent="space-between" width="100%">
+            <TypographyComponent fontSize="30px" fontFamily="var(--main)" color="var(--dull)" fontWeight="400">
               Admin Access
             </TypographyComponent>
             <ButtonComponent
@@ -78,53 +109,35 @@ export default function Admin() {
               + Add Sub-Admin
             </ButtonComponent>
           </BoxComponent>
-          <BoxComponent
-            display="flex"
-            justifyContent="space-between"
-            width="50%"
-            margin="30px 0px"
-          >
-            <Searchbox />
-            <BoxComponent marginLeft="10px">
-              <Dropdown label="Status" menuItems={status} />
-            </BoxComponent>
-          </BoxComponent>
-          <Table />
+          <Find placeholder="Search a user by name, e-mail or phone number" label='Status' status={status}/>
+          <Table rows={rows} headings={headings} icons={icons} onStatusChange={handleStatusChange} />
         </BoxComponent>
       </BoxComponent>
 
-      {/* Modal with overlay */}
       {isModalOpen && (
         <>
-          {/* Overlay */}
           <BoxComponent
             position="fixed"
             top="0"
             left="0"
             width="100%"
             height="100%"
-            bgcolor="rgba(0, 0, 0, 0.5)" /* Dimmed background */
+            bgcolor="rgba(0, 0, 0, 0.5)"
             zIndex="1200"
-            onClick={
-              handleCancelClick
-            } /* Close the modal when the overlay is clicked */
+            onClick={handleCancelClick}
           />
-
-          {/* Modal for the form */}
           <BoxComponent
             position="fixed"
             top="5%"
             left="30%"
             transform="translate(-50%, -50%)"
-            bgcolor="white"
-            boxShadow="0px 1px 2px rgba(0, 0, 0, 0.1)"
-            width="40%"
-            zIndex="1300"
+            bgcolor="var(--light)"
+            borderRadius="8px"
+            padding="20px"
             ref={modalRef}
-            padding="0px"
+            zIndex="1300"
           >
-            <Form onCancel={handleCancelClick} />{" "}
-            {/* Pass the handleCancelClick to Form */}
+            <Form />
           </BoxComponent>
         </>
       )}

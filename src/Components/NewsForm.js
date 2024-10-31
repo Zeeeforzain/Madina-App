@@ -7,8 +7,11 @@ import ImageComponent from "./ImageComponent";
 import TextArea from "./TextArea";
 import TagsComponent from "./Tags";
 import ButtonComponent from "./Button";
+import { useLocation } from 'react-router-dom';
 
 export default function NewsForm() {
+  const location = useLocation();
+  const title = location.state?.title || 'Add News';
   const category = [
     { value: 1, label: "Latest News" },
     { value: 2, label: "Pakistan" },
@@ -55,7 +58,7 @@ export default function NewsForm() {
           fontWeight="600"
           marginBottom='20px'
         >
-          Add News
+          {title}
         </TypographyComponent>
         <BoxComponent width='90%'>
         <InputComponent variant="outlined" label="Heading" /></BoxComponent>
