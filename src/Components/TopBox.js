@@ -8,6 +8,7 @@ export default function TopBox() {
     display='flex'
     justifyContent='space-between'
     width='100%'
+    padding='10px'
     >
       <Top heading="Top Campaigns"/>
       <Top heading="Top Charities"/>

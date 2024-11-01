@@ -47,9 +47,12 @@ export default function Table({ rows, headings, icons, onStatusChange }) {
     width: 150,
     renderCell: (params) => (
       <Switch
-        checked={params.row.Status === 'Active' || params.row.Status === 'Published'}
-        onChange={() => onStatusChange(params.row.id)}
-      />
+      checked={params.row.Status === 'Active' || params.row.Status === 'Published'}
+      onChange={() => onStatusChange(params.row.id)}
+      style={{
+        color: 'var(--primary)', // Default thumb color when unchecked
+      }}
+    />
     ),
     sortable: false,
   });

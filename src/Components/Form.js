@@ -5,7 +5,7 @@ import InputComponent from "./InputComponent";
 import AdminSelection from "./AdminSelection";
 import ButtonComponent from "./Button";
 
-export default function Form({ onCancel }) { // Accept onCancel as a prop
+export default function Form({ onCancel, title }) { // Accept title as a prop
   return (
     <BoxComponent
       boxShadow="1px 1px 1px 1px var(--paragraph)"
@@ -23,14 +23,14 @@ export default function Form({ onCancel }) { // Accept onCancel as a prop
         fontFamily="var(--main)"
         color="var(--dull)"
       >
-        Add Sub-Admin
+        {title} {/* Display the title prop here */}
       </TypographyComponent>
       <BoxComponent width='92%' gap='10px' display="flex" flexDirection="column">
-      <InputComponent label="Sub-Admin Name" />
-      <InputComponent label="Sub-Admin Email" />
-      <InputComponent label="Sub-Admin Phone Number" />
-      <InputComponent label="Password" type="password" />
-      <InputComponent label="Confirm Password" type="password" />
+        <InputComponent label="Sub-Admin Name" />
+        <InputComponent label="Sub-Admin Email" />
+        <InputComponent label="Sub-Admin Phone Number" />
+        <InputComponent label="Password" type="password" />
+        <InputComponent label="Confirm Password" type="password" />
       </BoxComponent>
       <BoxComponent padding="5px 20px">
         <AdminSelection />
@@ -60,11 +60,10 @@ export default function Form({ onCancel }) { // Accept onCancel as a prop
           sx={{
             padding: '10px 70px',
             fontSize: '12px',
-            fontWeight: '600',
             borderRadius: '20px'
           }}
         >
-          Add Sub-Admin
+          {title === "Add Sub-Admin" ? "Add Sub-Admin" : "Update Sub-Admin"} {/* Change button text based on title */}
         </ButtonComponent>
       </BoxComponent>
     </BoxComponent>

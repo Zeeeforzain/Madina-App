@@ -6,12 +6,12 @@ export default function Graph() {
     <LineChart
       xAxis={[
         {
-          data: [1,2,3,4,5,6,7,8,9],
+          data: [1,2,3,4,5,6,7,8,9,10,11,12],
         },
       ]}
       series={[
         {
-          data: [2546, 50500, 20040, 8455, 1500, 55464, 20056, 300, 4600], // Ensure this matches the x-axis
+          data: [2546, 50500, 20040, 8455, 1500, 55464, 20056, 300, 4600, 1234, 1213, 1231], // Ensure this matches the x-axis
           area: true,
         },
       ]}

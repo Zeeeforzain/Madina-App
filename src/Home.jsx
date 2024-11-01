@@ -26,7 +26,9 @@ export default function Home() {
         justifyContent="space-between"
       >
         <Sidebar />
-        <BoxComponent width="82%" margin="10px">
+        <BoxComponent  width="82%" marginTop='10px' sx={{padding:'10px',
+            overflowY: "auto", // Enable vertical scrolling
+            maxHeight: "85vh",}}>
           <FiguresBox />
           <BoxComponent
             display="flex"
@@ -46,7 +48,7 @@ export default function Home() {
               </BoxComponent>
               <BoxComponent 
               width='100%'
-              height='80vh'   
+              height='80vh'  
               >
                 <Graph />
               </BoxComponent>
